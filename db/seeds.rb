@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "> Deleting all records..."
+Transaction.destroy_all
+Client.destroy_all
+User.destroy_all
+
+puts ">>>> Creating users..."
+ringo = User.create(first_name: 'Vincent', last_name: 'Dumont', email: "ringo@mail.com", password: '123456')
+john = User.create(first_name: 'John', last_name: 'Do', email: "john@mail.com", password: '123456')
+puts "#{User.count} user(s) created"

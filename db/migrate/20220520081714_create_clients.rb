@@ -11,7 +11,6 @@ class CreateClients < ActiveRecord::Migration[6.1]
       t.boolean :advisors_interested
       t.string :study_level
       t.integer :status, default: 0
-      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
