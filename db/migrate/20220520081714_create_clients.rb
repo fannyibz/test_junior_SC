@@ -7,9 +7,10 @@ class CreateClients < ActiveRecord::Migration[6.1]
       t.string :phone_number
       t.string :department
       t.integer :age
-      t.float :revenu
+      t.float :revenue
       t.boolean :advisors_interested
       t.string :study_level
+      t.integer :status, default: 0
       t.references :user, null: false, foreign_key: true
 
       t.timestamps

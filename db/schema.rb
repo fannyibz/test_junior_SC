@@ -22,9 +22,10 @@ ActiveRecord::Schema.define(version: 2022_05_20_081714) do
     t.string "phone_number"
     t.string "department"
     t.integer "age"
-    t.float "revenu"
+    t.float "revenue"
     t.boolean "advisors_interested"
     t.string "study_level"
+    t.integer "status", default: 0
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
