@@ -9,7 +9,6 @@
       "Département": "75",
       "age": "24",
       "revenue": 3.5,
-      // les champs si dessous sont des questions à poser au client lors de l'appel et à remplir lors de l'edit
       "Intéressé pour être mis en relation avec des Advisors ?": "",
       "Niveau d'études de l'étudiant": ""
     },
@@ -22,7 +21,6 @@
       "Département": "78",
       "age": "18",
       "revenue": 3.5,
-      // les champs si dessous sont des questions à poser au client lors de l'appel et à remplir lors de l'edit
       "Intéressé pour être mis en relation avec des Advisors ?": "",
       "Niveau d'études de l'étudiant": ""
     },
@@ -35,7 +33,6 @@
       "Département": "91",
       "age": "18",
       "revenue": 3.5,
-      // les champs si dessous sont des questions à poser au client lors de l'appel et à remplir lors de l'edit
       "Intéressé pour être mis en relation avec des Advisors ?": "",
       "Niveau d'études de l'étudiant": ""
     },
@@ -48,7 +45,6 @@
       "Département": "91",
       "age": "28",
       "revenue": 3.5,
-      // les champs si dessous sont des questions à poser au client lors de l'appel et à remplir lors de l'edit
       "Intéressé pour être mis en relation avec des Advisors ?": "",
       "Niveau d'études de l'étudiant": ""
     },
@@ -61,7 +57,6 @@
       "Département": "83",
       "age": "29",
       "revenue": 3.5,
-      // les champs si dessous sont des questions à poser au client lors de l'appel et à remplir lors de l'edit
       "Intéressé pour être mis en relation avec des Advisors ?": "",
       "Niveau d'études de l'étudiant": ""
     },
@@ -74,7 +69,6 @@
       "Département": "78",
       "age": "47",
       "revenue": 3.5,
-      // les champs si dessous sont des questions à poser au client lors de l'appel et à remplir lors de l'edit
       "Intéressé pour être mis en relation avec des Advisors ?": "",
       "Niveau d'études de l'étudiant": ""
     },
@@ -87,7 +81,6 @@
       "Département": "07",
       "age": "38",
       "revenue": 3.5,
-      // les champs si dessous sont des questions à poser au client lors de l'appel et à remplir lors de l'edit
       "Intéressé pour être mis en relation avec des Advisors ?": "",
       "Niveau d'études de l'étudiant": ""
     },
@@ -100,7 +93,6 @@
       "Département": "13",
       "age": "43",
       "revenue": 3.5,
-      // les champs si dessous sont des questions à poser au client lors de l'appel et à remplir lors de l'edit
       "Intéressé pour être mis en relation avec des Advisors ?": "",
       "Niveau d'études de l'étudiant": ""
     },
@@ -113,7 +105,6 @@
       "Département": "07",
       "age": "24",
       "revenue": 3.5,
-      // les champs si dessous sont des questions à poser au client lors de l'appel et à remplir lors de l'edit
       "Intéressé pour être mis en relation avec des Advisors ?": "",
       "Niveau d'études de l'étudiant": ""
     },
@@ -126,7 +117,6 @@
       "Département": "78",
       "age": "89",
       "revenue": 3.5,
-      // les champs si dessous sont des questions à poser au client lors de l'appel et à remplir lors de l'edit
       "Intéressé pour être mis en relation avec des Advisors ?": "",
       "Niveau d'études de l'étudiant": ""
     },
@@ -139,7 +129,6 @@
       "Département": "78",
       "age": "27",
       "revenue": 3.5,
-      // les champs si dessous sont des questions à poser au client lors de l'appel et à remplir lors de l'edit
       "Intéressé pour être mis en relation avec des Advisors ?": "",
       "Niveau d'études de l'étudiant": ""
     },
@@ -152,7 +141,6 @@
       "Département": "75",
       "age": "28",
       "revenue": 3.5,
-      // les champs si dessous sont des questions à poser au client lors de l'appel et à remplir lors de l'edit
       "Intéressé pour être mis en relation avec des Advisors ?": "",
       "Niveau d'études de l'étudiant": ""
     },
@@ -165,7 +153,6 @@
       "Département": "91",
       "age": "21",
       "revenue": 3.5,
-      // les champs si dessous sont des questions à poser au client lors de l'appel et à remplir lors de l'edit
       "Intéressé pour être mis en relation avec des Advisors ?": "",
       "Niveau d'études de l'étudiant": ""
     }
