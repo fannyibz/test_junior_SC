@@ -6,11 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "> Deleting all records..."
-Transaction.destroy_all
-Client.destroy_all
 User.destroy_all
+Goal.destroy_all
 
 puts ">>>> Creating users..."
 ringo = User.create(first_name: 'Vincent', last_name: 'Dumont', email: "ringo@mail.com", password: '123456')
 john = User.create(first_name: 'John', last_name: 'Do', email: "john@mail.com", password: '123456')
 puts "#{User.count} user(s) created"
+
+puts ">>>> Creating goals..."
+goal_1 = Goal.create(user: ringo, start_date: Date.today.beginning_of_month, end_date: Date.today.end_of_month, amount: 600)
+puts "#{Goal.count} goal(s) created"

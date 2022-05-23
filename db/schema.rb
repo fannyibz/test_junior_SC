@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_20_140029) do
+ActiveRecord::Schema.define(version: 2022_05_23_081045) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "call_transactions", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "goal_id", null: false
+    t.bigint "client_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["client_id"], name: "index_call_transactions_on_client_id"
+    t.index ["goal_id"], name: "index_call_transactions_on_goal_id"
+    t.index ["user_id"], name: "index_call_transactions_on_user_id"
+  end
 
   create_table "clients", force: :cascade do |t|
     t.string "first_name"
@@ -30,13 +41,14 @@ ActiveRecord::Schema.define(version: 2022_05_20_140029) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "transactions", force: :cascade do |t|
+  create_table "goals", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "amount"
     t.bigint "user_id", null: false
-    t.bigint "client_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["client_id"], name: "index_transactions_on_client_id"
-    t.index ["user_id"], name: "index_transactions_on_user_id"
+    t.index ["user_id"], name: "index_goals_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -53,6 +65,8 @@ ActiveRecord::Schema.define(version: 2022_05_20_140029) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "transactions", "clients"
-  add_foreign_key "transactions", "users"
+  add_foreign_key "call_transactions", "clients"
+  add_foreign_key "call_transactions", "goals"
+  add_foreign_key "call_transactions", "users"
+  add_foreign_key "goals", "users"
 end

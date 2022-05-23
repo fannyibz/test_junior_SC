@@ -18,6 +18,8 @@ RSpec.describe User, type: :model do
   #Associations
   describe "ActiveRecord associations" do
     it { should have_many(:clients) }
+    it { should have_many(:call_transactions) }
+    it { should have_many(:goals) }
   end
 
 end

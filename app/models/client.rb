@@ -1,6 +1,7 @@
 class Client < ApplicationRecord
-  has_one :user, through: :transaction
-  
+
+  has_one :call_transaction
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :phone_number, presence: true

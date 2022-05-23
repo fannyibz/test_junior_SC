@@ -17,6 +17,6 @@ RSpec.describe Client, type: :model do
 
   #Associations
   describe "ActiveRecord associations" do
-    it { should belong_to(:user) }
+    it { should have_one(:call_transaction) }
   end
 end
