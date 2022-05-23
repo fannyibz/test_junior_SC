@@ -1,0 +1,37 @@
+<div class="container white-container">
+    <%= link_to  'Retour', root_path, class: 'btn btn-info btn-personalised' %>
+
+  <h1 id="hero-title">Clients</h1>
+
+  <div class="row px-5">
+    <div class="col-12" id="mt-3">
+   
+        <div class="row justify-content-center">
+          <% @clients.each do |client| %>
+            <div class="col-md-12 col-lg-4">
+              <%= link_to edit_client_path(client) do %>
+                <div class="card">
+                  <div class="card-infos">
+                    <div>
+                      <h3><%= "#{client.first_name} #{client.first_name}" %></h3>
+                      <h4><%= client.phone_number %></h5>
+                    </div>
+
+                    <p><%= client.revenue %>€</p>
+                    <% if client.done? %>
+                      <p>Satut:
+                      <i class="fas fa-check-square"></i>
+                      </p>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <%= link_to "Back to top", clients_path(anchor: 'hero-title'), class: "btn btn-outline-primary mt-5 ml-3"%>
+</div>

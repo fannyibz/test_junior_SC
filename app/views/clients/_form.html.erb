@@ -1,0 +1,15 @@
+<div class="container mb-5">
+  <%= simple_form_for(client) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div class="form-inputs">
+      <%= f.input :study_level, label: "Niveau d'étude" %>
+      <%= f.input :advisors_interested, collection: [['Oui', true],['Non', false]], as: :radio_buttons, label: "Intéressé pour être mis en relation avec des Advisors ?" %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, class:"btn btn-success mt-3" %>
+    </div>
+  <% end %>
+</div>
