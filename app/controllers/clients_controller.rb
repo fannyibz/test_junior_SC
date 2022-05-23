@@ -9,12 +9,7 @@ class ClientsController < ApplicationController
   end
 
   def update
-    p @client
-    p '_____________________---------'
-
     if @client.update(client_params)
-      p @client
-      binding.pry
       @client.done!
       redirect_to clients_path
     else
@@ -34,7 +29,3 @@ class ClientsController < ApplicationController
   end
 
 end
-
-
-   
-

@@ -1,6 +1,19 @@
-<div class="container white-container">
+<div class='container white-container'>
   <h1>Call center</h1>
 
-  <%= link_to 'Liste des clients', clients_path, class: "btn btn-outline-primary mt-5 ml-3" %>
+  <div class='row px-5'>
+    <div class='col-12' id='mt-3'>
+      
+      <div class= 'box-goal'>
+        <h4><%= "Mon objectif de #{@goal.start_date.strftime("%B")}" %></h4>
+        <p><%= "#{@goal.amount}€" %></p>
+      </div>
+
+      <%= link_to 'Créer mon objectif du mois', new_goal_path, class: 'btn btn-outline-primary mt-5 ml-3' %>
+      <%= link_to 'Liste des objectifs ', goals_path, class: 'btn btn-outline-primary mt-5 ml-3' %>
+      
+      <%= link_to 'Liste des clients', clients_path, class: 'btn btn-outline-primary mt-5 ml-3' %>
+    </div>
+  </div>
 
 </div>

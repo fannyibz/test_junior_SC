@@ -1,0 +1,31 @@
+<div class="container white-container">
+  <%= link_to  'Retour', root_path, class: 'btn btn-info btn-personalised' %>
+
+  <h1 id="hero-title">Objectifs</h1>
+
+  <div class="row px-5">
+    <div class="col-12" id="mt-3">
+   
+      <div class="row justify-content-center">
+        <% @goals.each do |goal| %>
+          <div class="col-md-12 col-lg-4">
+            
+            <%= link_to goal_path(goal) do %>
+              <div class="card">
+                <div class="card-infos">
+                  <div>
+                    <h3><%= "Période: #{goal.start_date.strftime("%B")}" %></h3>
+                    <h4><%= "Montant à atteindre: #{goal.amount} €" %></h5>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+
+          </div>
+        <% end %>
+      </div>
+   
+    </div>
+  </div>
+  <%= link_to "Back to top", goals_path(anchor: 'hero-title'), class: "btn btn-outline-primary mt-5 ml-3"%>
+</div>

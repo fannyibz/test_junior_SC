@@ -1,0 +1,13 @@
+<div class="container white-container">
+  <%= link_to  'Retour', root_path, class: 'btn btn-info btn-personalised' %>
+
+  <h1 id="hero-title">Objectifs</h1>
+
+  <div class="row px-5">
+    <div class="col-12" id="mt-3">
+      <h3><%= "Période: #{@goal.start_date.strftime("%B")}" %></h3>
+      <h4><%= "Montant à atteindre: #{@goal.amount} €" %></h5>
+    </div>
+  </div>
+  <%= link_to "Back to top", goals_path(anchor: 'hero-title'), class: "btn btn-outline-primary mt-5 ml-3"%>
+</div>

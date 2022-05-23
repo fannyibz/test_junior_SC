@@ -1,0 +1,17 @@
+<div class='container mb-5'>
+  <%= simple_form_for(goal) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div class='form-inputs'>
+      <div class='d-flex'>
+        <%= f.input :start_date, as: :date, order: [:month, :year], label: 'Période' %>
+      </div>
+      <%= f.input :amount, label: 'Objectif financier à atteindre' %>
+    </div>
+
+    <div class='form-actions'>
+      <%= f.button :submit, class:'btn btn-success mt-3' %>
+    </div>
+  <% end %>
+</div>
