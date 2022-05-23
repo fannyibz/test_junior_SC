@@ -5,6 +5,14 @@
 
   <div class="row px-5">
     <div class="col-12" id="mt-3">
+      <%= form_tag clients_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a client"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
    
         <div class="row justify-content-center">
           <% @clients.each do |client| %>
@@ -13,7 +21,7 @@
                 <div class="card">
                   <div class="card-infos">
                     <div>
-                      <h3><%= "#{client.first_name} #{client.first_name}" %></h3>
+                      <h3><%= "#{client.first_name} #{client.last_name}" %></h3>
                       <h4><%= client.phone_number %></h5>
                     </div>
 

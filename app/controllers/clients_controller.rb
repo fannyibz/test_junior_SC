@@ -2,7 +2,11 @@ class ClientsController < ApplicationController
   before_action :set_client, only: %i[ edit update ]
 
   def index
-    @clients = Client.all
+    if params[:query].present?
+      @clients = Client.where("first_name ILIKE ?", "%#{params[:query]}%")
+    else
+      @clients = Client.all
+    end
   end
 
   def edit
@@ -10,6 +14,7 @@ class ClientsController < ApplicationController
 
   def update
     if @client.update(client_params)
+      CallTransaction.create(client: @client, user: current_user, goal: current_user.goals.last, revenue: @client.revenue )
       @client.done!
       redirect_to clients_path
     else

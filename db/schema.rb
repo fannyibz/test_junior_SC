@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2022_05_23_081045) do
   enable_extension "plpgsql"
 
   create_table "call_transactions", force: :cascade do |t|
+    t.float "revenue"
     t.bigint "user_id", null: false
     t.bigint "goal_id", null: false
     t.bigint "client_id", null: false
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(version: 2022_05_23_081045) do
     t.date "start_date"
     t.date "end_date"
     t.integer "amount"
+    t.boolean "active", default: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

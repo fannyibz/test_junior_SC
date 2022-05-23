@@ -8,6 +8,7 @@
         <%= f.input :start_date, as: :date, order: [:month, :year], label: 'Période' %>
       </div>
       <%= f.input :amount, label: 'Objectif financier à atteindre' %>
+      <%= f.input :active, as: :boolean, label: 'Ojectif actuel?' %>
     </div>
 
     <div class='form-actions'>

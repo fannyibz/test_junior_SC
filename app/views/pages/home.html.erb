@@ -5,14 +5,31 @@
     <div class='col-12' id='mt-3'>
       
       <div class= 'box-goal'>
-        <h4><%= "Mon objectif de #{@goal.start_date.strftime("%B")}" %></h4>
-        <p><%= "#{@goal.amount}€" %></p>
+        <% if @goal %>
+          <h4><%= "Mon objectif pour #{@goal.start_date.strftime("%B")}" %></h4>
+          <p><%= "#{@goal.amount}€" %></p>
+        <% end %>
       </div>
 
+      <div class= 'box-revenu'>
+        <h4><%= "Revenu généré pour le mois de #{@month}" %></h4>
+        <%= simple_form_for(root_path, method: :get ) do |f| %>
+          <div class='d-flex'>
+            <%= f.input :start_date, as: :date, order: [:month, :year], label: false %>
+            <%= f.submit 'OK', class:'btn btn-success mt-3' %>
+          </div>
+        <% end %>
+        <%="💪 #{@revenue} € 💪" %>
+      </div>
+
+
       <%= link_to 'Créer mon objectif du mois', new_goal_path, class: 'btn btn-outline-primary mt-5 ml-3' %>
+
       <%= link_to 'Liste des objectifs ', goals_path, class: 'btn btn-outline-primary mt-5 ml-3' %>
       
       <%= link_to 'Liste des clients', clients_path, class: 'btn btn-outline-primary mt-5 ml-3' %>
+
+      <%= link_to 'Liste des appels passés', call_transaction_path, class: 'btn btn-outline-primary mt-5 ml-3' %>
     </div>
   </div>
 

@@ -1,0 +1,32 @@
+<div class="container white-container">
+
+  <%= link_to  'Retour', root_path, class: 'btn btn-info btn-personalised' %>
+  <h1 id="hero-title">Appels passés</h1>
+
+ <%= simple_form_for(call_transaction_path, method: :get ) do |f| %>
+  <div class='d-flex'>
+    <%= f.input :start_date, as: :date, order: [:month, :year], label: false %>
+    <%= f.submit 'OK', class:'btn btn-success mt-3' %>
+  </div>
+<% end %>
+
+  <div class="row px-5">
+    <div class="col-12" id="mt-3">
+   
+      <div class="row justify-content-center">
+        <% @call_transactions.each do |call| %>
+          <div class="col-md-12 col-lg-4">
+            <div>
+              <h4><%= "Appel passé le #{call.created_at}" %></h5>
+              <h3><%= link_to "#{call.client.first_name} #{call.client.first_name}", client_path(call.client) %></h3>
+              <h4><%= "#{call.client.revenue} € gagné pour cet appel" %></h5>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+  <%= link_to "Back to top", call_transaction_path(anchor: 'hero-title'), class: "btn btn-outline-primary mt-5 ml-3"%>
+
+</div>
