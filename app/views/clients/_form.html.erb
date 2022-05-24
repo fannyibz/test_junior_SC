@@ -1,4 +1,4 @@
-<div class="container mb-5">
+<div class="mb-5">
   <%= simple_form_for(client) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -9,7 +9,7 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, class:"btn btn-success mt-3" %>
+      <%= f.button :submit, class:"btn btn-success mt-3 btn-100" %>
     </div>
   <% end %>
 </div>

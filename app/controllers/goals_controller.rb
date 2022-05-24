@@ -3,9 +3,16 @@ class GoalsController < ApplicationController
 
   def index
     @goals = Goal.all.where(user: current_user)
+    if params['/goals'].present?
+      @selected_revenue = Goal.find(params['/goals']['goal']).calls_revenue
+      @selected_period = Goal.find(params['/goals']['goal']).name
+    end
   end
 
   def show
+    @revenue = @goal.calls_revenue
+    @missing_revenue = @goal.amount - @revenue
+    @percentage = @revenue * 100 / @goal.amount
   end
 
   def new
@@ -22,8 +29,7 @@ class GoalsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @goal.update(goal_params)
@@ -40,9 +46,8 @@ class GoalsController < ApplicationController
     @goal = Goal.find(params[:id])
   end
 
-
   def goal_params
-    params.require(:goal).permit(:start_date, :end_date, :amount, :active)
+    params.require(:goal).permit(:start_date, :amount, :active)
   end
 
 end

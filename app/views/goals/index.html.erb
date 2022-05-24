@@ -5,24 +5,38 @@
 
   <div class="row px-5">
     <div class="col-12" id="mt-3">
-   
+
       <div class="row justify-content-center">
-        <% @goals.each do |goal| %>
-          <div class="col-md-12 col-lg-4">
-            
-            <%= link_to goal_path(goal) do %>
-              <div class="card">
-                <div class="card-infos">
-                  <div>
-                    <h3><%= "Période: #{goal.start_date.strftime("%B")}" %></h3>
-                    <h4><%= "Montant à atteindre: #{goal.amount} €" %></h5>
+        <div class='d-flex justify-content-center mb-2'>
+          <h4 class= 'mt-2 px-2'><%= "Revenu généré pour le mois de:" %></h4>
+          <%= simple_form_for(goals_path, method: :get ) do |f| %>
+            <div class='d-flex'>
+              <%= f.input :goal, collection: @goals, label_method: :name, value_method: :id, label: false  %>
+              <%= f.submit 'OK', class:'btn btn-outline-info mb-3 mx-1' %>
+            </div>
+          <% end %>
+        </div>
+        
+        <%="💪 Revenu pour #{@selected_period}: #{@selected_revenue}€ 💪" if @selected_revenue %>
+
+        <div class='mt-4'>
+          <% @goals.each do |goal| %>
+            <div class="col-md-12 col-lg-4">
+              
+              <%= link_to goal_path(goal) do %>
+                <div class="card">
+                  <div class="card-infos">
+                    <div>
+                      <h3><%= "Période: #{goal.start_date.strftime("%B")}" %></h3>
+                      <h4><%= "Montant à atteindre: #{goal.amount} €" %></h5>
+                    </div>
                   </div>
                 </div>
-              </div>
-            <% end %>
+              <% end %>
 
-          </div>
-        <% end %>
+            </div>
+          <% end %>
+        </div>
       </div>
    
     </div>

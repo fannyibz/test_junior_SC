@@ -1,12 +1,42 @@
-.navbar-lewagon {
+.navbar-brocante {
   justify-content: space-between;
-  background: white;
+  background: $ocher;
+  color: #ffedd3;
+  padding: 0.5rem;
+  z-index: 4;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-brocante .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-brocante .navbar-brand img {
+  width: 60px;
+}
+
+.nav-link {
+  color: white !important;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: $green !important;
+}
+
+.nav-profil {
+  color: white !important;
+  margin: 8px 8px 0px 8px;
+}
+
+.nav-image {
+  color: aqua;
+  width: 40%;
+  filter: sepia(100%);
+  -webkit-filter: sepia(100%);
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }

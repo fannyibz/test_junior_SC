@@ -1,13 +1,27 @@
 <div class="container white-container">
-  <%= link_to  'Retour', root_path, class: 'btn btn-info btn-personalised' %>
-
-  <h1 id="hero-title">Objectifs</h1>
+  <%= link_to  'Retour', goals_path, class: 'btn btn-outline-info' %>
+  <h1 id="hero-title"><%= "Objectif pour #{@goal.name}" %></h1>
 
   <div class="row px-5">
     <div class="col-12" id="mt-3">
-      <h3><%= "Période: #{@goal.start_date.strftime("%B")}" %></h3>
-      <h4><%= "Montant à atteindre: #{@goal.amount} €" %></h5>
-      <h4><%= "Objectif du mont?: #{@goal.active}" %></h5>
+      <div class='mb-4'>
+        <h4><%= "🚀 Montant à atteindre: #{@goal.amount} €" %></h4>
+        <h4><%= "✅ Objectif en cours" if @goal.active %></h4>
+      </div>
+
+      <h3><%= "#{@missing_revenue}€ avant d'atteindre ton objectif" %></h3>
+      <%= render 'shared/progress', { goal: @goal, percentage: @percentage, revenue: @revenue } %>
+      <h3 class='mt-5'><%= "Appels passés" %></h5>
+      <% @goal.call_transactions.each do |call| %>
+        <div class="card">
+          <div class="card-infos">
+            <h3><%= link_to "#{call.client.first_name} #{call.client.last_name}", client_path(call.client) %></h3>
+            <h4><%= "Appel passé le #{call.created_at.strftime('%d/%m/%y à %H:%M')}" %></h5>
+            <h4><%= "#{call.client.revenue} € gagnés pour cet appel" %></h5>
+          </div>
+        </div>
+      <% end %>
+
     </div>
   </div>
   <%= link_to "Back to top", goals_path(anchor: 'hero-title'), class: "btn btn-outline-primary mt-5 ml-3"%>

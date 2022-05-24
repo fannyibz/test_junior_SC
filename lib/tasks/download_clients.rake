@@ -2,7 +2,6 @@ namespace :download_client do
 
   desc "This task will import clients json file"
   task import: :environment do
-    Client.destroy_all
     puts "Starting importing clients"
     file = File.read('clients_sc.json')
     data_hash = JSON.parse(file)

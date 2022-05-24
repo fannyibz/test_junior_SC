@@ -1,0 +1,26 @@
+#badge {
+  padding: 40px 0px;
+  text-align: center;
+  position: relative;
+  background: $green;
+  height: 150px;
+  width: 150px;
+  border-radius: 100px;
+  margin-bottom: 50px;
+}
+#badge:before,
+#badge:after {
+  content: "";
+  position: absolute;
+  border-bottom: 100px solid $green;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  top: 130px;
+  left: -10px;
+  transform: rotate(-140deg);
+}
+#badge:after {
+  left: auto;
+  right: -10px;
+  transform: rotate(140deg);
+}

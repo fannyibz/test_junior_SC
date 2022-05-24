@@ -4,6 +4,8 @@ class ClientsController < ApplicationController
   def index
     if params[:query].present?
       @clients = Client.where("first_name ILIKE ?", "%#{params[:query]}%")
+    elsif params['/clients']
+      @clients = params['/clients']['status'] == '1' ?  Client.done : Client.to_do
     else
       @clients = Client.all
     end
@@ -14,10 +16,17 @@ class ClientsController < ApplicationController
 
   def update
     if @client.update(client_params)
-      CallTransaction.create(client: @client, user: current_user, goal: current_user.goals.last, revenue: @client.revenue )
-      @client.done!
-      redirect_to clients_path
+      @transaction = CallTransaction.new(client: @client, user: current_user, goal: current_user.goals.last, revenue: @client.revenue )
+      if @transaction.save
+        @client.done!
+        flash[:notice] = "Appel et transaction bien sauvergardés"
+        redirect_to clients_path
+      else
+        flash[:alert] =  "N'oublie pas de créer ton objectif" if @transaction.errors.full_messages.include?('Goal must exist')
+        render :edit
+      end  
     else
+      flash[:alert] =  "Il te manque un champs à remplir"
       render :edit
     end
   end

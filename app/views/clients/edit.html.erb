@@ -1,46 +1,45 @@
 <div class="container white-container">
-  <%= link_to  'Back to list', clients_path, class: 'btn btn-info btn-personalised' %>
+  <%= link_to  'Back to list', clients_path, class: 'btn btn-outline-info' %>
 
   <h1 id="hero-title">Informations client</h1>
-  <h2 id=""><%="#{@client.first_name} #{@client.last_name}"%></h1>
 
   <div class="row px-5">
     <div class="col-12" id="mt-3">
    
-        <div class="row justify-content-center">
-          <div class="ad-infos">
-          <p>
-            <strong>Nom, Prénom:</strong>
-            <%="#{@client.last_name} #{@client.first_name} "%>
-          </p>
+      <div class="row justify-content-center">
+        <div class="ad-infos d-flex justify-content-between">
+          <div class="col-6">
+            <h3 id=""><%="#{@client.first_name} #{@client.last_name}"%></h3>
+            <p>
+              <strong>Numéro de téléphone:</strong>
+              <%= @client.phone_number %>
+            </p>
 
-          <p>
-            <strong>Numéro de téléphone:</strong>
-            <%= @client.phone_number %>
-          </p>
+            <p>
+              <strong>Email:</strong>
+              <%= @client.email %>
+            </p>
 
-          <p>
-            <strong>Email:</strong>
-            <%= @client.email %>
-          </p>
+            <p>
+              <strong>Age:</strong>
+              <%= @client.age %>
+            </p>
 
-          <p>
-            <strong>Age:</strong>
-            <%= @client.age %>
-          </p>
+            <p>
+              <strong>Département:</strong>
+              <%= @client.department %>
+            </p>
 
-          <p>
-            <strong>Département:</strong>
-            <%= @client.department %>
-          </p>
-
-          <p>
-            <strong>Revenu:</strong>
-            <%= "#{@client.revenue} €" %>
-          </p>
-
-          <%= render 'form', client: @client %>
-
+            <p>
+              <strong>Revenu:</strong>
+              <%= "#{@client.revenue} €" %>
+            </p>
+          </div>
+          
+          <div class='client-form'>
+            <h3 >Informations à remplir</h3>
+            <%= render 'form', client: @client %>
+          </div>
 
         </div>
         

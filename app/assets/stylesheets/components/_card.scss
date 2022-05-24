@@ -1,0 +1,56 @@
+#hero-title {
+  margin-bottom: 40px;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin: 10px 0px;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.card > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card .card-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  border-radius: 4px;
+}
+
+.card-dashboard {
+  font-size: 16px;
+  font-weight: bold;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin: 10px 0px;
+  border-radius: 4px;
+}
+
+.card-dashboard .card-infos {
+  margin: 10px 20px;
+}
+
+.chat-card {
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 8px;
+  border-radius: 4px;
+  p {
+    margin: 0px;
+  }
+}

@@ -1,0 +1,26 @@
+.btn {
+  border-radius: 4px;
+}
+
+.btn-personalised {
+  color: white;
+  border-radius: 4px;
+  height: min-content;
+}
+
+.btn-custom {
+  @include button-variant(#3c638a, #204b76, #19406e, #f7f9fb, #ffffff, #19406e);
+  color: $blue;
+}
+
+.btn-success {
+  color: white;
+}
+
+.btn-outline-success:hover {
+  color: white;
+}
+
+.btn-100 {
+  width: 100%;
+}

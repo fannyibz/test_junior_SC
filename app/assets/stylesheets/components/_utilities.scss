@@ -1,0 +1,53 @@
+h1 {
+  color: $green;
+  text-align: center;
+  font-size: 40px;
+  margin: 35px 0px 35px 0px;
+}
+
+h2 {
+  color: $light-blue;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  color: $ocher;
+  font-size: 20px;
+}
+
+h4 {
+  color: #575757;
+  font-size: 15px;
+}
+
+h5 {
+  font-size: 30px;
+  color: $green;
+}
+
+h6 {
+  font-size: 20px;
+  color: #304f54;
+}
+
+p {
+  color: #304f54;
+  font-size: 12px;
+}
+
+.white-container {
+  background-color: white;
+  margin-top: 180px;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px #80808057;
+  position: relative;
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
+}

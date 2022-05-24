@@ -1,7 +1,77 @@
-# Import rake
+# Study Call 📞
 
-- Download clients from json file
-  `rake download_client:import`
+## Setup
+
+For it's first launch run the following command :
+
+```
+bundle install
+```
+
+```
+yarn install
+```
+
+Create the db
+
+```
+rails db:create
+```
+
+Then run the migrations
+
+```
+rails db:migrate
+```
+
+Now run the seeds
+
+```
+rails db:seed
+```
+
+## Login
+
+You can log with this profil:
+
+- email: john@mail.com
+- password: 123456
+
+## Method & Features
+
+#### Feature implemented:
+
+- [x] A user can log in with a valid username and password through a login screen
+- [x] A user can see a list of clients
+- [x] A user can see a client
+- [x] A user can edit a client to fill his informations
+- [x] A user can set a monthly objective for his revenue
+- [x] A user can see his total revenue on a given period
+- [x] A client has all the data you can find in the json as attributes, store the more relevant
+- [x] A client has a revenue that is the money the caller make
+- [x] A client needs to have a status to be qualified
+
+#### Gems
+
+- Devise
+- Rspec
+- ShouldaMatcher
+- Factorybot
+- Faker
+
+#### With more time, i would:
+
+- Implement all the tests with rspec.
+- Implement more features:
+  - as a user i can create an invoice, directly from my objective
+  - as a user i can edit my objective
+  - as a user i can create ojective for a year or less than a month
+  - as user i can tchat with
+  - as a client i recieve an email with informations following my call with a study caller
+
+Thanks 🙏,
+
+---
 
 # test_junior_SC
 

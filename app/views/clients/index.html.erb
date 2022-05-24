@@ -1,36 +1,42 @@
 <div class="container white-container">
-    <%= link_to  'Retour', root_path, class: 'btn btn-info btn-personalised' %>
+    <%= link_to  'Retour', root_path, class: 'btn btn-outline-info' %>
 
   <h1 id="hero-title">Clients</h1>
 
   <div class="row px-5">
     <div class="col-12" id="mt-3">
-      <%= form_tag clients_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find a client"
-        %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
-      <% end %>
+      <div class="search-bar">
+        <%= simple_form_for(clients_path, method: :get ) do |f| %>
+          <div class='d-flex'>
+            <%= f.input :status, legend_tag: false, as: :radio_buttons, 
+                                 collection: Client.statuses,
+                                 wrapper: :vertical_collection_inline %>
+            <%= f.submit 'OK', class:'btn btn-info mb-3 mx-1' %>
+          </div>
+        <% end %>
+        <%= form_tag clients_path, method: :get, class: 'd-flex' do %>
+          <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a client" %>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
+      </div>
    
         <div class="row justify-content-center">
           <% @clients.each do |client| %>
-            <div class="col-md-12 col-lg-4">
+            <div class="col-12">
               <%= link_to edit_client_path(client) do %>
                 <div class="card">
                   <div class="card-infos">
                     <div>
-                      <h3><%= "#{client.first_name} #{client.last_name}" %></h3>
-                      <h4><%= client.phone_number %></h5>
+                      <h3><%= "🧑 #{client.first_name} #{client.last_name}" %></h3>
+                      <h4><%= "📞 #{client.phone_number}" %></h5>
+                      <h4><%= "💸 #{client.revenue}" %>€</h4>
                     </div>
-
-                    <p><%= client.revenue %>€</p>
-                    <% if client.done? %>
-                      <p>Satut:
-                      <i class="fas fa-check-square"></i>
-                      </p>
-                    <% end %>
+                    <div>
+                      <% if client.done? %>
+                        <h4><%= "Satut: ✅" %></h4>
+                        <p><%= "Appel passé le #{client&.call_transaction&.created_at.strftime('%d/%m/%y à %H:%M')}" %></p>
+                      <% end %>
+                    </div>
                   </div>
                 </div>
               <% end %>
@@ -40,6 +46,6 @@
         
       </div>
     </div>
+    <%= link_to "Back to top", clients_path(anchor: 'hero-title'), class: "btn btn-outline-primary mt-5 ml-3"%>
   </div>
-  <%= link_to "Back to top", clients_path(anchor: 'hero-title'), class: "btn btn-outline-primary mt-5 ml-3"%>
 </div>
