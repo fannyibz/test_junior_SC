@@ -6,6 +6,7 @@
   <div class="row px-5">
     <div class="col-12" id="mt-3">
       <div class="search-bar">
+        <h4>Chercher par statut</h4>
         <%= simple_form_for(clients_path, method: :get ) do |f| %>
           <div class='d-flex'>
             <%= f.input :status, legend_tag: false, as: :radio_buttons, 
@@ -14,6 +15,7 @@
             <%= f.submit 'OK', class:'btn btn-info mb-3 mx-1' %>
           </div>
         <% end %>
+        <h4>Chercher par nom</h4>
         <%= form_tag clients_path, method: :get, class: 'd-flex' do %>
           <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a client" %>
           <%= submit_tag "Search", class: "btn btn-primary" %>

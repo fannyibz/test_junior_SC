@@ -23,7 +23,7 @@
             <div class='mx-2'><%= current_user.first_name %></div>
           </div>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <%= link_to "Liste des clients", clients_path, class: "dropdown-item" %>
+            <%= link_to "Tes clients", clients_path, class: "dropdown-item" %>
             <%= link_to "Tes objectifs", goals_path, class: "dropdown-item" %>
             <%= link_to "Tes appels passé", call_transaction_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>

@@ -61,15 +61,18 @@ You can log with this profil:
 
 #### With more time, i would:
 
-- Implement all the tests with rspec.
-- Add comments to my code
 - Add gem Pundit (!!!!)
+- Add a cron task, with gem whenever to change the goal's attribute active to false, when the month is over.
+- Improve my search bars
+- Add I18n fro translation
 - Implement more features:
   - as a user i can create an invoice, directly from my objective
   - as a user i can edit my objective
   - as a user i can create ojective for a year or less than a month
   - as user i can click on the phone number and call directly my client
   - as a client i recieve an email with informations following my call with a study caller
+- Implement all the tests with rspec.
+- Add comments to my code
 
 Thanks 🙏,
 

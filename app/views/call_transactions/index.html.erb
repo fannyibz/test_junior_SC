@@ -17,8 +17,8 @@
         <% @call_transactions.each do |call| %>
          <div class="card">
           <div class="card-infos">
-              <h4><%= "Appel passé le #{call.created_at}" %></h5>
-              <h3><%= link_to "#{call.client.first_name} #{call.client.first_name}", client_path(call.client) %></h3>
+              <h3><%= link_to "#{call.client.first_name} #{call.client.last_name}", client_path(call.client) %></h3>
+              <h4><%= "Appel passé le #{call.created_at.strftime('%d/%m/%y à %H:%M')}" %></h5>
               <h4><%= "#{call.client.revenue} € gagné pour cet appel" %></h5>
             </div>
           </div>
